@@ -1,0 +1,24 @@
+{
+    "name": "eoinmahon/sage-api",
+    "description": "Api to integrate with Sage.",
+    "type": "library",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/http": "^5.8"
+	},
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "EoinMahon\\SageApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "minimum-stability": "stable"
+}
