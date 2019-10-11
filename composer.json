@@ -6,8 +6,8 @@
     "license": "MIT",
     "require": {
         "php": ">=7.0",
-        "guzzlehttp/guzzle": "^6.3",
-        "illuminate/http": "^5.8"
+        "guzzlehttp/guzzle": "^5.3",
+        "illuminate/http": "^5.5"
 	},
     "require-dev": {
     },
