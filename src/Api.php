@@ -14,7 +14,7 @@ class Api
 
     public function __construct(Auth $auth)
     {
-        $this->auth         = $auth;
+        $this->auth = $auth;
     }
 
     public function find($resource, $id)
@@ -52,7 +52,7 @@ class Api
 
     protected function call($method, $url, $data = null)
     {	
-		$client = new GuzzleHttp\Client(['base_uri' => $url,'headers' => $this->auth->getAuthHeaders()]);
+		$client = new GuzzleHttp\Client(['base_uri' => $url,'headers' => $this->auth->setAuthHeaders()]);
 		$response = $client->request(strtoupper($method), '',['body'=>$data]);
         return $response;
     }
@@ -60,22 +60,5 @@ class Api
     protected function urlForResource($resource)
     {
 		return "{$this->auth->instance_url}/{$resource}";
-		
-    }
-
-    protected function urlForQueries()
-    {
-        //return "{$this->auth->instance_url}/services/data/v40.0/query/";
-		return "{$this->auth->instance_url}/sales_invoices";
-    }
-
-    protected function log($message)
-    {
-        array_push($this->log, $message);
-    }
-
-    protected function getCollection($fields)
-    {
-        return ($fields instanceof Collection ? $fields->keys() : collect($fields))->implode(',');
     }
 }
